@@ -1,0 +1,99 @@
+https://www.youtube.com/watch?v=QJat_nicj9c&list=PLY1Fi4XflWSvtu963rZpfH6WeX54vSrDW
+
+1. It is okay to make mistakes: 
+(1) The metrics are not making any sense 
+(2) I think the better metric is instead of spend time on the 'wrong' metrics 
+
+2. Quality is more important then quantity: 
+3 points of solid metrics: 
+clear definition/how and why?
+
+3. Ensure interact the interviewer: 
+Engage with the interviewer and strong communication 
+confirm the ideas, do you want to talk about/ Check in the interviewrs 
+
+4. Always Clarify Questions (Fully understand the questions)  
+CTR = Total Clicks/ Total People 
+What is the goal.What data do we have for supporting the details 
+Ask if it is makes sense. 
+
+5. Structure your answer: 2 mins 
+Provide a structure and back into details 
+
+6. Red Flags: 
+(1) No idea how to approach the problem 
+(2) Too many ideas (sound random) 
+
+7. Follow Framework Blindly
+Consider the Context 
+
+8. Not being able to defend my ideas 
+Why metric A or metric B is better 
+
+https://www.youtube.com/watch?v=JCNsI0TtNGw&list=PLY1Fi4XflWSvtu963rZpfH6WeX54vSrDW&index=2
+Meta Questions: How to improve a product 
+
+1. Depends on the interview type 
+2. Still looking for a structure answer 
+Sample Question: 
+How to improve user retention on Twitter? 
+How to improve engagement on facebook? 
+How to improve what is on your mind facebook? 
+How to improve what's app and what feature you would love to add to it? 
+
+Steps to do these: 
+1. Ask clarifying questions 
+   -- Be clear about the goal and how does the goal related to engagement, retention and revenue 
+   -- Narrow down to specific feature (Twitter has diverse features, tweets, which ones we should focus on) 
+   -- Facebook: Improve what is on your mind in facebook? 
+
+2. Narrow down the topic and brainstorm the ideas: 
+   -- Analyze Customer Journey Map: How can we remove friction on using the features 
+      -- Increase Awareness of the product 
+      -- Push Notification 
+      -- Use a pop-up window 
+      -- Increase the size of the component 
+         Break down into the Scenarios: 
+          (1) Did not knwo what to say 
+          (2) Spend time but did not enter text 
+          (3) Abandon the post 
+              Solution: Provide dates/
+          Some people kown what they are exactly looking for, but still abandom the post: 
+               In an email of notification  
+    -- Segmentation: 
+         Users never posted - identify key needs for the users  (do not know how to use it) 
+            -- Provide detail instructions 
+            -- do not have enough friends 
+         Users have not post in a while: 
+            -- likes and comments (cannalization) 
+            -- criticism (remove negative comments) 
+            Address different needs to different people 
+         Post but end up posting: 
+            - controversial 
+              Send even more controversial content 
+
+      Compare the inactive user and use ML models for the users 
+              study what affects the posting 
+      Or modeling user behavior: 
+              Importance to find out what affects the posting behavior 
+      Focus on the group: Increase marketing efferts  
+
+      Product Manager: Focus on reduce friction / Not to mention ML 
+      DS: Analyze User Behavior/ Turn Inactive user to active user 
+
+      Recommendation: Priorization of ideas
+      Quant Analysis 
+      Cost Effective Solution 
+
+      Follow-up question/ 
+      Define the Success Metrics 
+      Design the experiments 
+      (For the experiment design phrase, we should be careful about the two sided markets and the social networks) 
+      Summary: Summarize the approach, business impact, how to define metrics, and how to tests what to expect 
+      
+          
+         
+          
+   
+
+
