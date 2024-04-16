@@ -91,7 +91,17 @@ Steps to do these:
       (For the experiment design phrase, we should be careful about the two sided markets and the social networks) 
       Summary: Summarize the approach, business impact, how to define metrics, and how to tests what to expect 
       
-          
+
+https://www.youtube.com/watch?v=ZBOMGr3JFXM&list=PLO_DkCSmTKMO26xpkqWagiPCSzsq3ltUo&index=9
+(1) 把合适的问题放进区问题框架里， MECE 框架，把框架达成共识。 所有框架进行讨论。 产品，框架，统计知识
+
+（2）根据框架，把回答的问题建立hypothesis,决定一个feature 要不要launch. 
+    conversion rate- 比competitor 低 ,product sense,找到最关键的问题 （分成几个部分，排除法的部分） 
+(3) 实验或者数据分析去validate 这个feature, 用数据去measure商家喜不喜欢某些功能，revenue 和profit (policy), 商家到底愿意用，adoption,使用之后feature retention. 
+可行的方法，measure adoption and retention. 什么才是够好，什么才是不够好（comparison). other consideration of cost and benefits. 
+数据或者ab test. 
+
+
          
           
    
