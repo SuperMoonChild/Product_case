@@ -260,5 +260,29 @@ Key Points: (1) Marketing ROI (Return on Investment)
 (2) CAC(Acuqsition Cost) 
 (3) Revenue: (CLV Customer Life Time Value) 
 
+### Meta Recidivism Rate: 
+How did you measure recidivisum? 
+Clarification Questions: 
+(1) What are the main purpose to recidivisum strategy? 
+Improve Engagement/ 
+(2) Do we have specific segment to target or which area? 
+(3) In what product Facebook, Whatapp or just in general? 
+
+How to measure recidivisum? 
+(1) How long? Times since the last crime happend 
+(2) Severity of recidivisum? (The impact of the recidivisum) 
+(3) Types of the recidivisum 
+(4) Frequency of the recidivisum? 
+Average time of particular user will recidivied in a certain period of time? 
+
+What could we go wrong with this metric: 
+(1) Not meeting the ultimate goal: Since the motiviation of the such behavior is unclear. 
+(2) People will use fake accounts across the platform, so it would be very hard to tight down to one person. 
+(3) The fraud people will work in groups so they will be skewed the dataset 
+(4) The definition of the recidivsm would be dynamic, so the definition to include or exclude the accounts will not be captured the whole picture of it. 
+
+
+
+
 
 
