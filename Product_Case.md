@@ -185,3 +185,38 @@ Non-experimental launch is also okay if we are tight on resources (willing to sa
 - **Net Neutral or Negative to IG/Meta**: Continue product iteration.
 - **Net Positive with Severe Cannibalism**: This deserves a serious conversation with our sister teams.
 
+Example of the private stories on the Instagram: Questions: (1) Metrics (2) Need to articulate the formula really well? 
+
+[**Watch the video on YouTube**](https://www.youtube.com/watch?v=wp3f3h_by4s&t=1517s)
+
+### Overview
+This video features a comprehensive mock interview focusing on product analysis within a social media context, specifically discussing Instagram's "Close Friends" feature. The discussion involves assessing the feature's potential impact on user engagement and proposing metrics to measure its success.
+
+### Key Discussion Points
+
+#### Understanding the Product's Purpose
+- The primary goal of the "Close Friends" feature is to enhance engagement among existing Instagram users by encouraging more private and selective sharing among friends. This could potentially attract users who find the platform too public.
+
+#### Proposed Metrics for Measuring Success
+- **Stories Made Per User:** The frequency of stories posted by users, which could show an increase if the feature is effective.
+- **Engagement Among Target Audience:** Specifically looking at users who rarely post stories to see if the feature encourages them to post more.
+- **Adoption Rates of the Feature:** Monitoring how many users actually use the feature to post close friend stories.
+
+#### Experimental Rollout Suggestions
+- Conducting A/B tests by providing the feature to one group and withholding it from another to compare changes in behavior.
+- Analyzing the "stickiness" of the feature by tracking if users continue to use it over time.
+
+#### Potential Challenges and Considerations
+- The risk of decreased overall story views if more users adopt private postings, which could reduce the visibility of stories to a wider audience.
+- The need to track not just the creation of stories but also how many are viewed to assess if the feature is leading to more meaningful engagement.
+
+#### Evaluating Trade-offs
+- Balancing the increase in story creation with potential drops in story views.
+- Considering the long-term retention and behavior change among users as more private content could lead to longer time spent on the app.
+
+### Conclusion and Further Steps
+The interview wraps up with discussions on fine-tuning the experiment design, such as masking whether a story is a "close friend" story for users not part of the test group. This would help isolate the variable being tested (feature's effect on story posting) from awareness of the feature itself.
+
+The video provides a deep dive into the analytical thought process required in product management within tech companies, particularly those dealing with social media platforms.
+
+
