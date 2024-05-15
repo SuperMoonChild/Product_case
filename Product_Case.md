@@ -185,7 +185,7 @@ Non-experimental launch is also okay if we are tight on resources (willing to sa
 - **Net Neutral or Negative to IG/Meta**: Continue product iteration.
 - **Net Positive with Severe Cannibalism**: This deserves a serious conversation with our sister teams.
 
-Example of the private stories on the Instagram: Questions: (1) Metrics (2) Need to articulate the formula really well? 
+### Example of the private stories on the Instagram: Questions: (1) Metrics (2) Need to articulate the formula really well? (3) How Uber is doing A/B testing for the pricing tests? 
 
 [**Watch the video on YouTube**](https://www.youtube.com/watch?v=wp3f3h_by4s&t=1517s)
 
