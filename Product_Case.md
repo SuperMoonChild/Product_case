@@ -281,6 +281,7 @@ What could we go wrong with this metric:
 (3) The fraud people will work in groups so they will be skewed the dataset 
 (4) The definition of the recidivsm would be dynamic, so the definition to include or exclude the accounts will not be captured the whole picture of it. 
 
+Parents加入孩子更不愿意用FB了：这个是很老的题目了，楼主把它拿出来讲是因为这里面有一个很经典的，当我们没有AB test可以做了，我们该怎么办？建议大家可以去多看看关于observation study的东西（i.e., propensity modeling, diff-in-diff），这个不一定会考，但是不要让面试官觉得你只会AB test，你要先去justify我们该不该做AB Test，然后再是AB Test。
 
 
 
