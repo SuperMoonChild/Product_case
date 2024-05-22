@@ -132,3 +132,5 @@ By using these methods, you can analyze the impact of multiple factors on your d
 2. **Fixed Effects Models**
    - **Definition**: Control for unobserved heterogeneity by allowing each entity (e.g., individual, firm) to have its own intercept.
    - **Example**: Using panel data of individuals over time to control for unobserved personal characteristics that affect both the independent and dependent variables.
+
+#Notes from this model: 
