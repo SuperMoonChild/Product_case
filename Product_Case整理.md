@@ -1,3 +1,24 @@
+A/B Test 模板： 
+
+
+
+1. clarify the question / what is the goal of the experiment? 
+2. pick a metric to test: Explain Why I have to pick this metric 
+   AA Test for the population 
+3. establish hypotheses
+   set significance level (typically 5%)
+   set statistical power (typically 80%)
+   set MDE (typically 1%) (please confirm with the interviewer) 
+4. design the experiment: 
+   randomization level: 50% vs. 50% test and control, clustering first degree 
+   determine population: US users  
+   determine sample size: formula variance/MDE 
+5. duration of experiment: Two weeks (avoid novelty effect and weekend effect also sample size) 
+6. Conclude: p-Value: 0.01 < 5%, significant, may have potential to launch the product 
+
+
+
+
 1. 面经：May 20th 
 
 sql:
@@ -103,7 +124,44 @@ F1 Score:
 
 SQL题也是围绕着video call 的，之前的帖子里有table.
 
-3. 面经： May 15th
+1. Clarifying Questions:
+What kind of product that we ar targeting? What's app
+What kind of regions that we want to focus
+What is the ultimate goal for the system?
+
+Framework: 
+1. Enhance overall engagement of the platform
+2. Primary Metric: Average Time spent on the plaform
+3. Seconary: DAU/MAU Retention Rate
+4. Trade-off: Ad Revnue, non-video call feature engagement
+5. A/B testing:
+  Goal: Engagement of the overall product
+  Metric to test: Average Time Spent on the platform
+  Randomization: Network Effect, First Degree Clustering
+  5% significant level, 80% of power, MDE with 1%
+6. Null Hypothesis:
+    1. Video call has no effect on the average time spend
+    2. Video call has effect on the average time spend
+    P < 0.05, significant level, which means that we have the potential to launch the features.
+7. 如果你说了用ab 实验，那么control group 并没有video call 的情况要怎么衡量。
+   A/A Test: Run the A/A test to collect the baseline data
+   Use a placebo effect: Provide the control group with a mock video call feature that doesn't actually work, but makes them believe they have the feature. This way, both groups think they have the feature, and any differences in behavior or outcomes can be attributed to the actual video call functionality.
+8. Launch 了video call 会导致哪些metric 下降,以及怎么办.
+   Video Engagement Time (Because of the quality of the video due to the internet connection)
+   App Crash 
+   Latency Time of the pages loading (Work with Engineer Team to make sure)
+   Non-Video Feature Engagement (Prioritize the Short Term and Long Term Goal)
+   Ad Revenue
+   Retention 
+
+   What we should do:
+   (1) User Feedback
+   (2) Optimize the performance of the video call quality
+   (3) Dashboard Monitoring
+
+Group Call Feature: 
+
+10. 面经： May 15th
 sql有两个表一个是banned account另一个是probability with pair of user that could be recidivism
 table 1 user_id, banned_reason, date
 table 2 user_id1, user_id2, probability
@@ -113,30 +171,30 @@ case:
 question1 : what metric would you use to measure recidivism
 question2: what could go wrong with your selected metric?.
 
-4. 面经： May 13th
+11. 面经： May 13th
 SQL：App Usage那道题。面试官希望你define metrics，估计不是唯一答案，言之有理即可。我就是这metric这拿不定主意，来来回回的说，很不清楚。建议一定想清楚了再说，选定了最好就别随便变化了。 问interviewer问题的环节，我也是脑子有些不清楚，问的坑坑洼洼。。。。
 BQ：就是常规题，conflicts，constructive feedback
 AE: ads的概率题，地里有的。和SQL后面followup我有一样的问题，拿不准metric来来回回的
 AR：有点久了记不清了。好像是比较fb和ins的performance。地里有面经
 
-5. 面经， May 12th 
+12. 面经， May 12th 
 SQL: Survey response rate
 CASE: Notification + Notificaiton of freind attending event near you
 
-6. 面经, Apr
+13. 面经, Apr
 AR: Ins Shop 那题
 AE: 面经里bad account算概率的那题，会延伸问一些bad account相关的business insights
 SQL: Shop Visibility 那题，前面几个写code的小问不难，用window function可以解决，最后一问开放性问题，需要自己想一个metrics来回答并写出code
 
-7. 面经，Apr.
+14. 面经，Apr.
 Case / SQL: Notification
 
-8. 面经 Apr
+15. 面经 Apr
 SQL：
 A) What is the response rate to the survey?
 B) Do newer users have a better opinion of notifications than more tenured users?
 .
-9. Product Sense:
+16. Product Sense:
 1. how to measure success for push notification
 2. if event team wants to add a new event realted notification, how would you decide if we should launch or not
 
