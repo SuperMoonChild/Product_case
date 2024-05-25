@@ -1,7 +1,4 @@
 A/B Test 模板： 
-
-
-
 1. clarify the question / what is the goal of the experiment? 
 2. pick a metric to test: Explain Why I have to pick this metric 
    AA Test for the population 
@@ -206,7 +203,35 @@ Products - Notification
     1. [Clarification] What function of this feature are we testing?
         1. UI, frequency, sound, backend recommendation system .--
     2. [Follow up] If the ENG team want to test the feature with a new backend recommendation system, how would you set up the experiment?
-. 1point3acres.com
+
 SQL - Survey
 A) What is the response rate to the survey?
 B) Do newer users have a better opinion of notifications than more tenured users?
+
+SQL: Notification: 
+1. Dates Manipulation: Facebook Questions 
+   datediff(new_date, old_date) calculate the difference between the two dates
+   date_add(date, interval X day) calculate X date after
+   date_sub(date,interval X day) calculate X date before
+2. Calculate the average/Medium Value: 
+   Medium Value is using ntile function, equal cuts of the data and select ntile = 2
+3. Reciver and sender (this needs to be deduped, we can use least(reciver_id,sender_id) or greatest(reciver_id,sender_id)
+   or distinct(reciver_id,sender_id) as a unique combination of the queries
+4. Define the metric first and implement queries
+5. If you have use agg function, you have to remember the rest of the terms will appear in the group by function (request center fail rate)
+6. Pay attention to Rank function and row_number() function, rank will return tie results but row_number only return top rows in the results.
+7. Video Calls:the third question would be a problem:
+   (select ac.*, u.country, u.dau_flag, case when (country = 'fr' and dau_flag = 1 and ac.ds = date_sub(current_date, interval 1 day then 1 else 0 end) as fr_active_yesterday from calls as ac left join users as u on ac.caller = user_id)
+    SELECT 
+    COUNT(DISTINCT CASE WHEN dau = 1 THEN user ELSE NULL END) * 1.0 / 
+    (SELECT COUNT(DISTINCT user_id) 
+     FROM users 
+     WHERE country = 'fr' AND dau_flag = 1 AND ds = DATE_SUB(CURRENT_DATE, INTERVAL 1 DAY)) AS active_fr_user_percentage
+FROM 
+    fr_active;
+8. 
+   
+9. 
+
+
+   
