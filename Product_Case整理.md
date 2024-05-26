@@ -229,7 +229,7 @@ SQL: Notification:
      WHERE country = 'fr' AND dau_flag = 1 AND ds = DATE_SUB(CURRENT_DATE, INTERVAL 1 DAY)) AS active_fr_user_percentage
 FROM 
     fr_active;
-8. 
+8. Pay attention to the sequence of the order of the sql: From / Where/ Group by/ Having (if you have agg function)/ order by / limit 
    
 9. 
 
