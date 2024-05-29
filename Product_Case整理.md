@@ -1,3 +1,5 @@
+Survey/ Notification/ Video Call/ Banned Account/ Harmful Contents 
+
 A/B Test 模板： 
 1. clarify the question / what is the goal of the experiment? 
 2. pick a metric to test: Explain Why I have to pick this metric 
@@ -11,12 +13,225 @@ A/B Test 模板：
    determine population: US users  
    determine sample size: formula variance/MDE 
 5. duration of experiment: Two weeks (avoid novelty effect and weekend effect also sample size) 
+6. Conclude: p-Value: 0.01 < 5%, significant, may have potential to launch the product
+
+面经 May 29th: 
+sql: video_call, 2 题， 找出每天打电话人的比例（需要考虑caller 和recipient） What percentage of daily active users from us were on a video call yesterday?
+-- Step 1: Gather the distinct caller and recipient by day
+WITH calls AS (
+    SELECT DISTINCT caller AS user, ds FROM video_calls
+    UNION
+    SELECT DISTINCT recipient AS user, ds FROM video_calls
+),
+
+-- Step 2: Join with the user table and flag as making a call that day
+active_user AS (
+    SELECT
+        a.user_id,
+        a.dau_flag,
+        a.ds AS active_day,
+        CASE WHEN c.user IS NOT NULL THEN 1 ELSE 0 END AS call_active_flag,
+        c.ds AS call_date
+    FROM dim_all_users AS a
+    LEFT JOIN calls AS c ON a.user_id = c.user AND a.ds = c.ds
+)
+
+-- Step 3: Calculate the percentage of users making a call each day
+SELECT
+    active_day AS call_date,
+    SUM(call_active_flag) * 1.0 / COUNT(user_id) AS active_call_percentage
+FROM active_user
+GROUP BY active_day
+ORDER BY active_day;
+
+
+group by: 
+-- Step 1: Select all the active video calls from yesterday in the US
+WITH active_call_us AS (
+    SELECT DISTINCT a.caller AS user, a.ds
+    FROM video_calls AS a
+    JOIN dim_all_users AS b ON a.caller = b.user_id
+    WHERE b.country = 'US' AND a.ds = DATE_SUB(CURRENT_DATE, INTERVAL 1 DAY)
+
+    UNION
+
+    SELECT DISTINCT a.recipient AS user, a.ds
+    FROM video_calls AS a
+    JOIN dim_all_users AS b ON a.recipient = b.user_id
+    WHERE b.country = 'US' AND a.ds = DATE_SUB(CURRENT_DATE, INTERVAL 1 DAY)
+),
+
+-- Step 2: Select all the DAU = 1 users in the US from yesterday
+yesterday_dau AS (
+    SELECT user_id
+    FROM dim_all_users
+    WHERE country = 'US' AND dau_flag = 1 AND ds = DATE_SUB(CURRENT_DATE, INTERVAL 1 DAY)
+)
+
+-- Step 3: Calculate the active percentage
+SELECT
+    COUNT(DISTINCT ac.user) * 1.0 / COUNT(DISTINCT yd.user_id) AS active_perc_yesterday
+FROM
+    active_call_us ac
+JOIN
+    yesterday_dau yd ON ac.user = yd.user_id;
+
+#
+ how do you find out which group of people are interested in video call feature
+
+ 1. What's App Survey (randomly selected)
+ 2. Demographics Study / Internet Connection 
+ 3. User Profiling:
+    Age
+    Gender
+    Location (urban/rural)
+    Device type (smartphone/tablet)
+    Internet connectivity (Wi-Fi/mobile data)
+4. Demographics:
+* Age: Younger generations (Gen Z, Millennials) are more likely to use video calls.
+* Occupation: Remote workers, entrepreneurs, and professionals in tech, marketing, and sales.
+* Location: Urban areas with high internet penetration.
+
+  Behavioral indicators:
+* Users of video conferencing apps (e.g., Zoom, Skype) for personal or professional purposes.
+* Individuals frequently using social media platforms with video calling capabilities (e.g., Facebook, WhatsApp).
+
+  Market trends and analytics:
+* Study industry reports, market research papers, and growth projections for video conferencing.
+* Analyze user engagement metrics (e.g., time spent on video calls, frequency of use).
+
+How to test the Video Features: 
+1.What is the overall goal to accomplish? Engagement? 
+2.Do we want aim to specific population or geographic area ? 
+3. Where does this call embedded in, a new product, or new feature, in Facebook? 
+
+User Journey Description: 
+1. User can scroll the pages in facebook
+2. There is a button in the top left/right corner that people can click and do the video calls/ Color pop 
+
+The goal here is to enhance the overall engagement of all the users. 
+
+Break down into the metrics that we are going to talk: 
+1. Primary Metric: Over all time spent on the platform
+2. Secondary Metric: DAU/ MAU and retention rate on the platform
+3. Trade-off: No. of posts / non-video feature/ Ad Revenue
+
+A/B Test: 
+Randmization of the Split: Network Effect here: 
+Video Call is two way of the testing, there will be inference between two groups of people, First degree of the clustering on the test and control population). 
+
+pick a metric to test: Explain Why I have to pick this metric 
+   AA Test for the population (AA) 
+3. establish hypotheses
+   If we have video feature, there will be no effect of two population 
+   If we have video feature, there will be effect of two population 
+   set significance level (typically 5%)
+   set statistical power (typically 80%)
+   set MDE (typically 1%) (please confirm with the interviewer) 
+4. design the experiment: 
+   randomization level: 50% vs. 50% test and control, clustering first degree 
+   determine population: US users  
+   determine sample size: formula variance/MDE 
+5. duration of experiment: Two weeks (avoid novelty effect and weekend effect also sample size) 
 6. Conclude: p-Value: 0.01 < 5%, significant, may have potential to launch the product 
 
+Here is the Improved version for the answer: 
+Improvement: 
+#The Primary Metric has to be within time period 
+#Add the related features on the new feature 
+#elaborate specific goal after the overall goal 
+
+Here is the improved answer formatted in Markdown code format:
+MarkDown
+# How to Test the Video Call Feature on Facebook
+=====================================================
+
+## Goal
+--------
+
+Our goal is to increase user retention and engagement on Facebook by introducing a seamless video call feature. Specifically, we aim to boost the average time spent per user per day by 10% within the next 6 weeks.
+
+## Metrics
+----------
+
+### Primary metric
+
+* Average time spent per user per day (ATSPUD)
+
+### Secondary metrics
+
+* Daily Active Users (DAU)
+* Retention rate (percentage of users returning after 7 days)
+* Number of video calls initiated per day
+* Average duration of video calls
+
+## A/B Test Design
+--------------------
+
+### Randomization
+
+* 50% of users will be randomly assigned to the test group (with video call feature) and 50% to the control group (without video call feature)
+
+### Clustering
+
+* We will use first-degree clustering to account for network effects, as users are likely to interact with their friends and family
+
+### Population
+
+* We will test this feature among US users aged 18-45
+
+### Sample size
+
+* We will use a sample size of 1 million users, calculated using the formula variance/MDE (minimum detectable effect) to detect a 10% increase in ATSPUD
+
+### Duration
+
+* The test will run for 2 weeks to account for potential novelty effects and to ensure a representative sample of users
+
+## Hypotheses
+-------------
+
+### Null hypothesis (H0)
+
+* The video call feature has no significant effect on ATSPUD (p > 0.05)
+
+### Alternative hypothesis (H1)
+
+* The video call feature has a significant effect on ATSPUD (p < 0.05)
+
+## Statistical Significance
+-------------------------
+
+### Significance level
+
+* 5% (α = 0.05)
+
+### Statistical power
+
+* 80% (β = 0.2)
+
+### MDE (Minimum Detectable Effect)
+
+* 1% increase in ATSPUD
+
+## Conclusion
+----------
+
+If the p-value is less than 0.05 (e.g., 0.01), we will reject the null hypothesis and conclude that the video call feature has a significant positive effect on user engagement and retention. This will indicate that launching the video call feature may be a good decision to increase user engagement on Facebook.
+
+## Follow-up questions
+----------------------
+
+### What if the results are inconclusive?
+
+* We would re-evaluate the test design, consider alternative metrics, and potentially run a follow-up test with adjustments.
+
+### How would you address potential issues with the video feature?
+
+* We would monitor user feedback, address technical issues promptly, and consider iterative improvements to the feature based on user behavior and feedback.
 
 
-
-1. 面经：May 20th 
+1.面经：May 20th 
 
 sql:
 两个表：
